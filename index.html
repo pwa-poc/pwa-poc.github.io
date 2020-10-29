@@ -51,22 +51,17 @@
 </head>
 <body>
   
-  <header class="header">
-    <h1>
-      POC - PWA
-      <a href="https://darksky.net/poweredby/" class="powered-by">
-        Powered by Us
-      </a>
-    </h1>
-    <button id="butInstall" aria-label="Install" hidden></button>
-    <button id="butRefresh" aria-label="Refresh"></button>
-  </header>
-
-  {% comment %} ? Card view for image upload start {% endcomment %}
   
-	
+  
+  
+	<div class="content">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-  <div class="camera">
+  <div class="camera" >
     <video id="video">Video stream not available.</video>
     <button id="startbutton">Take photo</button> 
   </div>
@@ -74,6 +69,26 @@
   </canvas>
   <div class="output">
     <img id="photo" alt="The screen capture will appear in this box."> 
+  </div>
+
+  <div>
+  <label> Click picture </label>
+    <input id="myFileInput" type="file" accept="image/*;capture=camera">
+
+<script>
+var myInput = document.getElementById('myFileInput');
+
+function sendPic() {
+    var file = myInput.files[0];
+
+    // Send file here either by adding it to a `FormData` object 
+    // and sending that via XHR, or by simply passing the file into 
+    // the `send` method of an XHR instance.
+}
+
+myInput.addEventListener('change', sendPic, false);
+</script>
+
   </div>
 	
   
