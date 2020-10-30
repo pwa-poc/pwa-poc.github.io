@@ -71,9 +71,17 @@
     <img id="photo" alt="The screen capture will appear in this box."> 
   </div>
 
-  <div>
-  <label> Click picture </label>
-    <input id="myFileInput" type="file" accept="image/*;capture=camera">
+ 
+	
+  <form action="http://localhost:3000/upload" enctype="multipart/form-data" method="post">
+      <!-- <input type="file" name="uploads"> -->
+      
+
+      <label> New picture </label>
+      <input id="myFileInput" type="file" name="uploads" accept="image/*;capture=camera">
+      <input type="submit" value="Upload">
+
+    </form>  
 
 <script>
 var myInput = document.getElementById('myFileInput');
@@ -88,11 +96,6 @@ function sendPic() {
 
 myInput.addEventListener('change', sendPic, false);
 </script>
-
-  </div>
-	
-  
-
 
   <script src="/scripts/luxon-1.11.4.js"></script>
   <script src="./scripts/capture.js">
